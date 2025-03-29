@@ -2,21 +2,28 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>魚の部屋</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Fish - ホームページ</title>
   <link rel="stylesheet" href="style.css">
 
   <!-- おしゃれフォント -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <header class="scroll-fade-in">
-    <h1>魚の部屋</h1>
+    <h1>Cyber Fish</h1>
   </header>
 
   <section class="news scroll-fade-in">
-    <h2>最新情報</h2>
-    <div class="news-box">
-      <!-- 情報をここに入れる -->
+    <h2>お知らせ</h2>
+    <div class="news-list">
+      <a href="news-1.html" class="news-item scroll-fade-in">
+        <span class="news-date">2024.03.15</span>
+        <span class="news-category">お知らせ</span>
+        <span class="news-title">チャンネル開設のお知らせ</span>
+        <i class="fas fa-chevron-right"></i>
+      </a>
     </div>
   </section>
 
@@ -25,30 +32,156 @@
   </section>
 
   <section class="menu scroll-fade-in">
-    <h3 class="menu-title">目次（タップで移動）</h3>
+    <h2 class="menu-title">メニュー</h2>
     <div class="triangle-grid">
-      <a href="#area1"><button>1</button></a>
-      <a href="#area2"><button>2</button></a>
-      <a href="#area3"><button>3</button></a>
-      <a href="#area4"><button>4</button></a>
-      <a href="#area5"><button>5</button></a>
-      <a href="#area6"><button>6</button></a>
-      <a href="#area7"><button>7</button></a>
-      <a href="#area8"><button>8</button></a>
-      <a href="#area9"><button>9</button></a>
+      <a href="#about"><button>チャンネル概要</button></a>
+      <a href="#service"><button>配信内容</button></a>
+      <a href="#recruit"><button>メンバーシップ</button></a>
+      <a href="#contact"><button>お問い合わせ</button></a>
+      <button class="coming-soon">Coming soon...</button>
+      <button class="coming-soon">Coming soon...</button>
     </div>
   </section>
 
   <!-- ジャンプ先のエリア -->
-  <section id="area1" class="jump-area scroll-fade-in"><span class="highlight-text">エリア1</span></section>
-  <section id="area2" class="jump-area scroll-fade-in"><span class="highlight-text">エリア2</span></section>
-  <section id="area3" class="jump-area scroll-fade-in"><span class="highlight-text">エリア3</span></section>
-  <section id="area4" class="jump-area scroll-fade-in"><span class="highlight-text">エリア4</span></section>
-  <section id="area5" class="jump-area scroll-fade-in"><span class="highlight-text">エリア5</span></section>
-  <section id="area6" class="jump-area scroll-fade-in"><span class="highlight-text">エリア6</span></section>
-  <section id="area7" class="jump-area scroll-fade-in"><span class="highlight-text">エリア7</span></section>
-  <section id="area8" class="jump-area scroll-fade-in"><span class="highlight-text">エリア8</span></section>
-  <section id="area9" class="jump-area scroll-fade-in"><span class="highlight-text">エリア9</span></section>
+  <section id="about" class="about scroll-fade-in">
+    <h2>チャンネル概要</h2>
+    <div class="about-content">
+      <table class="company-info">
+        <tr>
+          <th>チャンネル名</th>
+          <td>Cyber Fish</td>
+        </tr>
+        <tr>
+          <th>開設日</th>
+          <td>2024年3月15日</td>
+        </tr>
+        <tr>
+          <th>登録者数</th>
+          <td>1,000名（2024年3月21日現在）</td>
+        </tr>
+        <tr>
+          <th>ジャンル</th>
+          <td>ゲーム実況/解説</td>
+        </tr>
+        <tr>
+          <th>配信頻度</th>
+          <td>週2回（水曜・土曜）</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="service" class="service scroll-fade-in">
+    <h2>配信内容</h2>
+    <div class="service-grid">
+      <div class="service-item">
+        <i class="fas fa-gamepad"></i>
+        <h3>ゲーム実況</h3>
+        <p>プロゲーマーによる実況解説</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-book"></i>
+        <h3>攻略ガイド</h3>
+        <p>初心者向けの攻略方法解説</p>
+      </div>
+      <div class="service-item">
+        <i class="fas fa-users"></i>
+        <h3>コミュニティ</h3>
+        <p>視聴者との交流イベント</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="recruit" class="membership scroll-fade-in">
+    <h2>メンバーシップ</h2>
+    <div class="membership-content">
+      <div class="membership-grid">
+        <div class="membership-item">
+          <div class="membership-header">
+            <i class="fas fa-crown"></i>
+            <h3>メンバーシップ特典</h3>
+          </div>
+          <ul class="membership-features">
+            <li><i class="fas fa-check"></i> メンバー限定の実況配信</li>
+            <li><i class="fas fa-check"></i> アーカイブ配信の視聴</li>
+            <li><i class="fas fa-check"></i> 限定の攻略ガイド</li>
+            <li><i class="fas fa-check"></i> Discordサーバーへの招待</li>
+            <li><i class="fas fa-check"></i> メンバー限定のチャット</li>
+            <li><i class="fas fa-check"></i> 質問コーナーへの優先参加</li>
+          </ul>
+        </div>
+        <div class="membership-item">
+          <div class="membership-header">
+            <i class="fas fa-gem"></i>
+            <h3>メンバーシッププラン</h3>
+          </div>
+          <div class="membership-price">
+            <span class="price">¥490</span>
+            <span class="period">/月</span>
+          </div>
+          <ul class="membership-details">
+            <li><i class="fas fa-check"></i> いつでも解約可能</li>
+            <li><i class="fas fa-check"></i> 自動更新</li>
+            <li><i class="fas fa-check"></i> 特典は即時反映</li>
+          </ul>
+          <a href="news-2.html" class="membership-btn">詳細を見る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact scroll-fade-in">
+    <h2>お問い合わせ</h2>
+    <form class="contact-form">
+      <div class="form-group">
+        <label for="name">お名前 <span class="required">*</span></label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">メールアドレス <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">件名</label>
+        <input type="text" id="subject" name="subject">
+      </div>
+      <div class="form-group">
+        <label for="message">メッセージ <span class="required">*</span></label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">送信する</button>
+    </form>
+  </section>
+
+  <footer class="scroll-fade-in">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Cyber Fish</h3>
+        <p>YouTubeチャンネル</p>
+      </div>
+      <div class="footer-section">
+        <h3>リンク</h3>
+        <ul>
+          <li><a href="#about">チャンネル概要</a></li>
+          <li><a href="#service">配信内容</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>SNS</h3>
+        <div class="social-links">
+          <a href="http://www.youtube.com/@cyberfish228" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Cyber Fish All Rights Reserved.</p>
+    </div>
+  </footer>
 
   <!-- JavaScript（ジャンプ先ハイライト & スクロール演出） -->
   <script>
