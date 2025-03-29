@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>魚の部屋</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- おしゃれフォント -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="scroll-fade-in">
+    <h1>魚の部屋</h1>
+  </header>
+
+  <section class="news scroll-fade-in">
+    <h2>最新情報</h2>
+    <div class="news-box">
+      <!-- 情報をここに入れる -->
+    </div>
+  </section>
+
+  <section class="description scroll-fade-in">
+    <h3>このサイトの説明</h3>
+  </section>
+
+  <section class="menu scroll-fade-in">
+    <h3 class="menu-title">目次（タップで移動）</h3>
+    <div class="triangle-grid">
+      <a href="#area1"><button>1</button></a>
+      <a href="#area2"><button>2</button></a>
+      <a href="#area3"><button>3</button></a>
+      <a href="#area4"><button>4</button></a>
+      <a href="#area5"><button>5</button></a>
+      <a href="#area6"><button>6</button></a>
+      <a href="#area7"><button>7</button></a>
+      <a href="#area8"><button>8</button></a>
+      <a href="#area9"><button>9</button></a>
+    </div>
+  </section>
+
+  <!-- ジャンプ先のエリア -->
+  <section id="area1" class="jump-area scroll-fade-in"><span class="highlight-text">エリア1</span></section>
+  <section id="area2" class="jump-area scroll-fade-in"><span class="highlight-text">エリア2</span></section>
+  <section id="area3" class="jump-area scroll-fade-in"><span class="highlight-text">エリア3</span></section>
+  <section id="area4" class="jump-area scroll-fade-in"><span class="highlight-text">エリア4</span></section>
+  <section id="area5" class="jump-area scroll-fade-in"><span class="highlight-text">エリア5</span></section>
+  <section id="area6" class="jump-area scroll-fade-in"><span class="highlight-text">エリア6</span></section>
+  <section id="area7" class="jump-area scroll-fade-in"><span class="highlight-text">エリア7</span></section>
+  <section id="area8" class="jump-area scroll-fade-in"><span class="highlight-text">エリア8</span></section>
+  <section id="area9" class="jump-area scroll-fade-in"><span class="highlight-text">エリア9</span></section>
+
+  <!-- JavaScript（ジャンプ先ハイライト & スクロール演出） -->
+  <script>
+    // ハイライト
+    document.querySelectorAll('.triangle-grid a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').substring(1);
+        const span = document.querySelector(`#${targetId} .highlight-text`);
+        setTimeout(() => {
+          span.classList.add('flash');
+          setTimeout(() => {
+            span.classList.remove('flash');
+          }, 1200);
+        }, 300);
+      });
+    });
+
+    // スクロールでフェードイン
+    const fadeElements = document.querySelectorAll('.scroll-fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    fadeElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
