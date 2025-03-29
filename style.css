@@ -29,6 +29,7 @@ header {
   padding: 10px 20px;
   background: linear-gradient(135deg, #ffffff, #f0fdf4);
   border: none;
+  position: relative;
 }
 
 header h1 {
@@ -64,6 +65,66 @@ header h1::before {
 
 header h1::after {
   right: -40px;
+}
+
+.account-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999999;
+}
+
+.account-trigger {
+  color: #16a34a;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.account-trigger:hover {
+  color: #22c55e;
+  transform: scale(1.1);
+}
+
+.account-dropdown {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  margin-right: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  min-width: 120px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  z-index: 9999999;
+}
+
+.account-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 8px 16px;
+  color: #1e293b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background: #f0fdf4;
+  color: #16a34a;
 }
 
 .news {
@@ -313,6 +374,18 @@ header h1::after {
     padding: 20px 15px;
     margin: 20px 0;
   }
+
+  .account-icon {
+    right: 15px;
+  }
+  
+  .account-trigger {
+    font-size: 1.8rem;
+  }
+
+  .account-dropdown {
+    margin-right: 8px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -366,6 +439,23 @@ header h1::after {
   .jump-area {
     padding: 15px 10px;
     margin: 15px 0;
+  }
+
+  .account-icon {
+    right: 10px;
+  }
+  
+  .account-trigger {
+    font-size: 1.5rem;
+  }
+  
+  .account-dropdown {
+    margin-right: 5px;
+  }
+  
+  .dropdown-item {
+    padding: 6px 12px;
+    font-size: 0.8rem;
   }
 }
 
@@ -610,7 +700,7 @@ body.news-detail-page .news-detail {
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, #818cf8, #6366f1);
+  background: linear-gradient(135deg, #4ade80, #22c55e);
   color: white;
   border: none;
   padding: 12px 30px;
@@ -621,9 +711,16 @@ body.news-detail-page .news-detail {
   width: 100%;
 }
 
-.submit-btn:hover {
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
+.submit-btn:disabled {
+  background: linear-gradient(135deg, #94a3b8, #64748b);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.submit-btn:not(:disabled):hover {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
 }
 
 /* フッター */
@@ -903,3 +1000,126 @@ footer {
 
 @media screen and (max-width: 480px) {
   .membership::before {
+}
+
+/* サインアップページ */
+.signup-section {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-container {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.signup-container h2 {
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.signup-description {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.social-signup {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.google-btn {
+  background: white;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+}
+
+.google-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+.x-btn {
+  background: #1e293b;
+  color: white;
+}
+
+.x-btn:hover {
+  background: #0f172a;
+  transform: translateY(-2px);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.divider span {
+  padding: 0 10px;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.email-signup-form {
+  margin-bottom: 20px;
+}
+
+.login-link {
+  text-align: center;
+  color: #64748b;
+}
+
+.login-link a {
+  color: #16a34a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+  .signup-container {
+    padding: 20px;
+  }
+
+  .signup-container h2 {
+    font-size: 1.5rem;
+  }
+}

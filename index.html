@@ -13,6 +13,15 @@
 <body>
   <header class="scroll-fade-in">
     <h1>Cyber Fish</h1>
+    <div class="account-icon">
+      <div class="account-trigger">
+        <i class="fas fa-user-circle"></i>
+        <div class="account-dropdown">
+          <a href="#login" class="dropdown-item">Log In</a>
+          <a href="signup.html" class="dropdown-item">Sign Up</a>
+        </div>
+      </div>
+    </div>
   </header>
 
   <section class="news scroll-fade-in">
@@ -38,8 +47,12 @@
       <a href="#service"><button>配信内容</button></a>
       <a href="#recruit"><button>メンバーシップ</button></a>
       <a href="#contact"><button>お問い合わせ</button></a>
-      <button class="coming-soon">Coming soon...</button>
-      <button class="coming-soon">Coming soon...</button>
+      <a href="#privacy">
+        <button class="coming-soon">No Content</button>
+      </a>
+      <a href="#terms">
+        <button class="coming-soon">No Content</button>
+      </a>
     </div>
   </section>
 
@@ -184,6 +197,7 @@
   </footer>
 
   <!-- JavaScript（ジャンプ先ハイライト & スクロール演出） -->
+  <script src="script.js"></script>
   <script>
     // ハイライト
     document.querySelectorAll('.triangle-grid a').forEach(link => {
@@ -198,19 +212,6 @@
         }, 300);
       });
     });
-
-    // スクロールでフェードイン
-    const fadeElements = document.querySelectorAll('.scroll-fade-in');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-    fadeElements.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
