@@ -22,17 +22,23 @@ header, .news, .menu, .jump-area {
 }
 
 header {
-  height: 100px;
+  height: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px;
+  padding: 0;
   background: linear-gradient(135deg, #ffffff, #f0fdf4);
   border: none;
   position: relative;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 header h1 {
+  margin: 20px 0;
+  position: relative;
+  z-index: 1;
   font-family: 'Orbitron', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
@@ -42,7 +48,6 @@ header h1 {
     0 0 10px #16a34a,
     0 0 20px #16a34a;
   letter-spacing: 2px;
-  position: relative;
   display: inline-block;
   text-align: center;
   margin: 0;
@@ -65,66 +70,6 @@ header h1::before {
 
 header h1::after {
   right: -40px;
-}
-
-.account-icon {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 999999;
-}
-
-.account-trigger {
-  color: #16a34a;
-  font-size: 2rem;
-  transition: all 0.3s ease;
-  position: relative;
-  display: block;
-  cursor: pointer;
-}
-
-.account-trigger:hover {
-  color: #22c55e;
-  transform: scale(1.1);
-}
-
-.account-dropdown {
-  position: absolute;
-  top: 0;
-  right: 100%;
-  margin-right: 10px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 8px 0;
-  min-width: 120px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(10px);
-  transition: all 0.3s ease;
-  z-index: 9999999;
-}
-
-.account-dropdown.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(0);
-}
-
-.dropdown-item {
-  display: block;
-  padding: 8px 16px;
-  color: #1e293b;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.dropdown-item:hover {
-  background: #f0fdf4;
-  color: #16a34a;
 }
 
 .news {
@@ -375,16 +320,8 @@ header h1::after {
     margin: 20px 0;
   }
 
-  .account-icon {
-    right: 15px;
-  }
-  
-  .account-trigger {
-    font-size: 1.8rem;
-  }
-
-  .account-dropdown {
-    margin-right: 8px;
+  .header-image {
+    height: 300px;
   }
 }
 
@@ -441,21 +378,8 @@ header h1::after {
     margin: 15px 0;
   }
 
-  .account-icon {
-    right: 10px;
-  }
-  
-  .account-trigger {
-    font-size: 1.5rem;
-  }
-  
-  .account-dropdown {
-    margin-right: 5px;
-  }
-  
-  .dropdown-item {
-    padding: 6px 12px;
-    font-size: 0.8rem;
+  .header-image {
+    height: 200px;
   }
 }
 
@@ -1121,5 +1045,41 @@ footer {
 
   .signup-container h2 {
     font-size: 1.5rem;
+  }
+}
+
+.header-image {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.header-image:hover img {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  .header-image {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-image {
+    height: 200px;
   }
 }
